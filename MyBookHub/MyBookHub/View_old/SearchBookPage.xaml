@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyBookHub.SearchBookPage">
+	<StackLayout Spacing="10" Padding="50" BackgroundColor="#FFCCCCCC">
+	<Label Text="Search a Book" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="Search by:" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+          <Picker x:Name="searchpicker" Title="Types" HorizontalOptions="FillAndExpand" > <Picker.Items> <x:String>Book Title</x:String> <x:String>Author Name</x:String> <x:String>Book Category</x:String> </Picker.Items> </Picker>
+	</StackLayout>
+	<StackLayout Orientation="Horizontal">
+          <Label x:Name = "entrylbl" FontSize="16" Text="Enter here:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+          <Entry x:Name="searchQuery" Keyboard="Text"  HorizontalOptions="FillAndExpand" TextColor="Black" />
+          <Picker x:Name="selectcategory" IsVisible = "false" Title="Book Category" HorizontalOptions="FillAndExpand" > <Picker.Items> <x:String>Fiction</x:String> <x:String>Nonfiction</x:String> <x:String>Drama</x:String> <x:String>Self help</x:String> <x:String>Action</x:String> <x:String>Romance</x:String> <x:String>Mystery</x:String> </Picker.Items> </Picker>
+		</StackLayout>
+    <StackLayout Orientation="Horizontal">
+	<Label x:Name= "testlbl" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+	<Button Text="SEARCH" Clicked="searchdata" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+	</StackLayout>
+	</StackLayout>
+		
+</ContentPage>

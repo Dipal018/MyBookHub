@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyBookHub.View.ProfilePage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="FontSize" Value="16" />
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="VerticalOptions" Value="Center" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+
+        <Image 
+				AbsoluteLayout.LayoutFlags="All" 
+				AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            	Source="background3.png" 
+				Aspect="AspectFill"/>
+
+		<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="10" >
+			<StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+					Padding="20" BackgroundColor="White" Opacity="0.8">
+				<Grid x:Name="mainGrid" >
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="100" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+	      			<Label Text="First Name" Grid.Row="0" Grid.Column="0" />
+					<Entry x:Name="firstname" Placeholder="First Name" Grid.Row="0" Grid.Column="1" />
+					<Label Text="Last Name" Grid.Row="1" Grid.Column="0" />
+					<Entry x:Name="lastname" Placeholder="last name" Grid.Row="1" Grid.Column="1" />
+					<Label Text="Contact Number" Grid.Row="2" Grid.Column="0" />
+					<Entry x:Name="contactno" Placeholder="phone number" Grid.Row="2" Grid.Column="1" />
+					<Label Text="Email Address" Grid.Row="3" Grid.Column="0" />
+					<Entry x:Name="emailaddress" Placeholder="Email" Grid.Row="3" Grid.Column="1" />
+					<Label Text="UserName" Grid.Row="4" Grid.Column="0" />
+					<Entry x:Name="username" Placeholder="Username" IsEnabled="False" Grid.Row="4" Grid.Column="1" />
+	      			<Label Text="Password" Grid.Row="5" Grid.Column="0" />
+	      			<Entry x:Name="password" IsPassword="False" Grid.Row="5" Grid.Column="1"  />
+	      		</Grid>
+
+				<StackLayout Orientation="Horizontal" 
+						HorizontalOptions="EndAndExpand" 
+						VerticalOptions="Center">
+					<Button Text="Update" Clicked="updateuser"  />
+					<Button Text="Cancel" Clicked="cancelaction"  />
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</AbsoluteLayout>
+</ContentPage>

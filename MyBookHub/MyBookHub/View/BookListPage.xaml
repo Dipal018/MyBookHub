@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:local="clr-namespace:MyBookHub;assembly=MyBookHub"
+		x:Class="MyBookHub.View.BookListPage">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="FontSize" Value="16" />
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="VerticalOptions" Value="Center" />
+			</Style>
+			<local:BookAvailabilityLabelConverter x:Key="bookAvailabilityLabelConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+
+        <Image 
+				AbsoluteLayout.LayoutFlags="All" 
+				AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            	Source="background3.png" 
+				Aspect="AspectFill"/>
+
+		<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="10" >
+			<ListView x:Name="BookListView" 
+					IsVisible="true"
+					ItemSelected="OnViewListItemSelected"
+					HasUnevenRows="true"
+					RowHeight="-1"
+					BackgroundColor="White"
+					Opacity="0.8">
+			    <ListView.ItemTemplate>
+			      <DataTemplate>
+			        <ViewCell>
+						<ContentView Padding="5"> 
+							<Frame OutlineColor="Accent" Padding="10">
+								<StackLayout Orientation="Horizontal">
+									<Image HeightRequest="50" Source="book.png" />
+									<StackLayout Orientation = "Vertical" >				
+										<Label Text="{Binding BookTitle}" VerticalOptions="StartAndExpand" FontSize="14" FontAttributes="Bold" ></Label>
+										<Label x:Name="bookavail" Text="{Binding IsIssued, Converter={StaticResource bookAvailabilityLabelConverter}}" VerticalOptions="StartAndExpand" ></Label>
+									</StackLayout>
+								</StackLayout>
+							</Frame>
+						</ContentView>
+			        </ViewCell>
+			      </DataTemplate>
+			    </ListView.ItemTemplate>
+		  	</ListView>
+		</ScrollView>
+	</AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyBookHub.View.AboutAppPage">
+  
+  <ScrollView BackgroundColor="#FDF2E9">
+    <StackLayout>
+    <StackLayout  BackgroundColor="#FFE5B4" HeightRequest="50">
+      <Label Text="About this App" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#503026" FontAttributes="Bold" FontSize="Large"/>
+    </StackLayout>
+    <StackLayout  HeightRequest="15"></StackLayout>
+  <StackLayout>
+    <Label  TextColor="#503026" Text="The BookHub app is for those who loves to buy books and have huge library at home. This BookHub App will be helpful to create own library management system at home which includes functions like: Book Search, Book issue, Book return, Book add, Book remove, Book hold, Sending notifications to Friends via SMS, Barcode scanning of books and socializing library." />
+    <Label Text="Many home library systems are operated manually. In such situations the process of managing the library in order to keep records regarding the books and friends (borrowers), check the books manually, keep records on hard books etc. all have to be carried out manually and if the library is large in content, handling is also a problem. On the other hand if the person is at the market and wants to buy a book but does not remember that the book is already available at home library then it will cause unnecessary purchase of book. Manual record keeping is also not a reliable method as people tend to forget things. On the borrower’s point of view, in manual system borrower forgets to return the book or owner of a book forgets to get the book back. In such situations people get annoyed. Therefore there should be a reliable way to manage the home library system"  TextColor="#503026" />
+  </StackLayout>
+    </StackLayout>
+  </ScrollView>
+    </ContentPage>

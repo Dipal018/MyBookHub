@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyBookHub.BookDetailsPage">
+	<ScrollView>
+	<StackLayout Spacing="10" Padding="50" BackgroundColor="#FFCCCCCC">
+	<Label Text="Book Details" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+<!--	<StackLayout Orientation="Horizontal">
+			<Image x:TypeArguments="FileImageSource" Android="book1.png" WidthRequest="60" HeightRequest="40"/>
+			<Button Text="ADD IMAGE" Clicked="addimage" />
+	</StackLayout>-->			
+	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="Book Title" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+          <Label x:Name="book_title" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black" Text="{Binding BookTitle}"/>
+    </StackLayout>
+
+	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="ISBN No" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+          <Label x:Name="isbn_number" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"  Text="{Binding ISBNnumber}"/>
+    </StackLayout>
+			
+    <StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="Author" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+          <Label x:Name="author_name" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"  Text="{Binding AuthorName}"/>
+    </StackLayout>
+			
+	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="Category" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+          <Label x:Name="book_category" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black" Text="{Binding BookCategory}"/>
+	</StackLayout>
+<!--	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="No. of Books" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+          <Entry x:Name="no_of_books" Placeholder="Number of books" Keyboard="Numeric" HorizontalOptions="FillAndExpand" TextColor="Black" />
+    </StackLayout>-->
+	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="Description" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+          <Label x:Name="book_description" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black" Text="{Binding BookDescription}"/>
+    </StackLayout>
+			
+    <StackLayout Orientation="Horizontal">
+	<Button Text="REMOVE" Clicked="removebook" />
+    <Button Text="ISSUE" Clicked="issuebook" />
+	<Button Text="RETURN" Clicked="returnbook" />
+	</StackLayout>
+  </StackLayout>
+</ScrollView>
+</ContentPage>

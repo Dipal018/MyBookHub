@@ -1,0 +1,17 @@
+<PictureList xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance 
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Pictures>
+		<Picture>
+			<Title>Picture 1</Title>
+			<Source>http://image.flaticon.com/teams/new/1-freepik.jpg</Source>
+			<Detail>Nice picture 1</Detail>
+			<TimeTaken>2016-11-11</TimeTaken>
+		</Picture>
+		<Picture>
+			<Title>Picture 2</Title>
+			<Source>http://image.flaticon.com/teams/new/1-freepik.jpg</Source>
+			<Detail>Nice picture 2</Detail>
+			<TimeTaken>2016-11-12</TimeTaken>
+		</Picture>
+	</Pictures>
+</PictureList>

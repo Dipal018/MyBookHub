@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyBookHub.AddBookPage"
+>
+
+  <ScrollView>
+	<StackLayout Spacing="10" Padding="50" BackgroundColor="#FFCCCCCC">
+	<Label Text="Add a Book" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+<!--	<StackLayout Orientation="Horizontal">
+			<Image x:TypeArguments="FileImageSource" Android="book1.png" WidthRequest="60" HeightRequest="40"/>
+			<Button Text="ADD IMAGE" Clicked="addimage" />
+	</StackLayout>-->			
+	<!--<Image /><Button Text="Add Image" Clicked="addimage" />-->
+	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="Book Title" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+          <Entry x:Name="book_title" Placeholder="Book Title" Keyboard="Text" HorizontalOptions="FillAndExpand" TextColor="Black" />
+    </StackLayout>
+    <!--<Label Text="Book Title"/>
+    <Entry x:Name="book_title" Placeholder="Book Title" Keyboard="Text"/>-->
+	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="ISBN No" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+          <Entry x:Name="isbn_number" Placeholder="ISBN Number" Keyboard="Numeric" HorizontalOptions="FillAndExpand" TextColor="Black" />
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="Author" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+          <Entry x:Name="author_name" Placeholder="Author Name" Keyboard="Text" HorizontalOptions="FillAndExpand"/>
+    </StackLayout>
+	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="Category" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" TextColor="Black"/>
+          <Picker x:Name="book_category" Title="Book Category" HorizontalOptions="FillAndExpand" > <Picker.Items> <x:String>Fiction</x:String> <x:String>Nonfiction</x:String> <x:String>Drama</x:String> <x:String>Self help</x:String> <x:String>Action</x:String> <x:String>Romance</x:String> <x:String>Mystery</x:String> </Picker.Items> </Picker>
+	</StackLayout>
+<!--	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="No. of Books" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+          <Entry x:Name="no_of_books" Placeholder="Number of books" Keyboard="Numeric" HorizontalOptions="FillAndExpand" TextColor="Black" />
+    </StackLayout>-->
+	<StackLayout Orientation="Horizontal">
+          <Label FontSize="16" Text="Description" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+          <Entry x:Name="book_description" Placeholder="Book Description" Keyboard="Text" HorizontalOptions="FillAndExpand" TextColor="Black" />
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+	<Button Text="SAVE" Clicked="adddata" />
+    <Button Text="Show Data" Clicked="showdata" />
+	</StackLayout>
+  </StackLayout>
+</ScrollView>
+</ContentPage>	

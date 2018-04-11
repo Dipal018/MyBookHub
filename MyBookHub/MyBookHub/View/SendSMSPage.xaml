@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="MyBookHub.SendSMSPage">
+  <ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="FontSize" Value="16" />
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="VerticalOptions" Value="Center" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+
+        <Image 
+				AbsoluteLayout.LayoutFlags="All" 
+				AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            	Source="background3.png" 
+				Aspect="AspectFill"/>
+
+		<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="10" >
+			<StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+					Padding="20" BackgroundColor="White" Opacity="0.8">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="100" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Label Text = "Book Title" Grid.Row="0" Grid.Column="0" />
+					<Label x:Name="buk_title" Text="{Binding BookTitle}"  Grid.Row="0" Grid.Column="1" />
+					<Label Text="User Name"  Grid.Row="1" Grid.Column="0"  />
+					<Label x:Name="usr_name" Text="{Binding user_name}"  Grid.Row="1" Grid.Column="1" />
+					<Label Text="Phone Number" Grid.Row="2" Grid.Column="0"  />
+					<Label x:Name="user_number"  Grid.Row="2" Grid.Column="1" />
+					<Label Text="Return Date"  Grid.Row="3" Grid.Column="0" />
+					<Label x:Name="return_date"  Grid.Row="3" Grid.Column="1" />
+				</Grid>
+				<Frame OutlineColor="Accent" Padding="10" HorizontalOptions="CenterAndExpand">
+					<Label x:Name="sms_text" />
+				</Frame>
+				<Button Text="Send SMS" Clicked="sendmsg" HorizontalOptions="CenterAndExpand" />
+			</StackLayout>
+		</ScrollView>
+	</AbsoluteLayout>
+</ContentPage>

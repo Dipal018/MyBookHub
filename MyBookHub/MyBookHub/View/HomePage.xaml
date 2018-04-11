@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MyBookHub;assembly=MyBookHub"
+             x:Class="MyBookHub.View.HomePage"
+			NavigationPage.HasBackButton="False">
+
+
+  <ContentPage.ToolbarItems>    
+
+    <ToolbarItem Text="search"
+                 Order="Primary"
+                 Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    iOS="search.png"
+                    Android="search.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+
+    <ToolbarItem Text="My Profile"
+                 Order="Secondary"
+                 Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" 
+                    Android="profile.png"
+                    WinPhone="Images/Icon1F52D.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+
+    <ToolbarItem Text="My Books"
+                 Order="Secondary"
+                 Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="Images/Icon1F440.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+
+    <ToolbarItem Text="Add a Book"
+                Order="Secondary"
+                Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="Images/Icon1F440.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+
+    <ToolbarItem Text="Remove a Book"
+                Order="Secondary"
+                Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="Images/Icon1F440.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+    
+    <ToolbarItem Text="Issue a Book"
+                 Order="Secondary"
+                 Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="Images/Icon1F435.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+
+    <ToolbarItem Text="Return a Book"
+                Order="Secondary"
+                Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="Images/Icon1F440.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+
+    <ToolbarItem Text="Scan"
+                Order="Secondary"
+                Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="Images/Icon1F440.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+
+    <ToolbarItem Text="Send Notification"
+                Order="Secondary"
+                Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="Images/Icon1F440.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+    <ToolbarItem Text="About This App"
+                    Order="Secondary"
+                    Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="Images/Icon1F440.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+
+    <ToolbarItem Text="SignOut"
+                Order="Secondary"
+                Clicked="OnToolbarItemClicked">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="Images/Icon1F440.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+    
+  </ContentPage.ToolbarItems>
+
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="FontSize" Value="16" />
+				<!--<Setter Property="HorizontalOptions" Value="Start" />-->
+				<Setter Property="VerticalOptions" Value="Center" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+
+        <Image 
+				AbsoluteLayout.LayoutFlags="All" 
+				AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            	Source="background3.png" 
+				Aspect="AspectFill"/>
+
+		<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+			<StackLayout 
+					VerticalOptions="Center" HorizontalOptions="Center"
+					Padding="20" BackgroundColor="White" Opacity="0.8">
+  				<Label Text="Smart way to manage Home Library!" FontSize="20" FontAttributes="Italic"/>
+				<Image Source="lib1.jpg"/>
+			</StackLayout>
+		</ScrollView>
+	</AbsoluteLayout>
+</ContentPage>

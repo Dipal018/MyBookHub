@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:MyBookHub;assembly=MyBookHub"
+		x:Class="MyBookHub.View.AddBookPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="FontSize" Value="16" />
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="VerticalOptions" Value="Center" />
+			</Style>
+			 <local:MultiTriggerConverter x:Key="dataHasBeenEntered" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+
+        <Image 
+				AbsoluteLayout.LayoutFlags="All" 
+				AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            	Source="background3.png" 
+				Aspect="AspectFill"/>
+
+		<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="10">
+			<StackLayout 
+					VerticalOptions="StartAndExpand" HorizontalOptions="Center"
+					Padding="20" Spacing="10" BackgroundColor="White" Opacity="0.8">
+				<Grid>
+					<Grid.ColumnDefinitions>
+		                <ColumnDefinition Width="100" />
+		                <ColumnDefinition Width="*" />
+		            </Grid.ColumnDefinitions>
+					<Label Text="Book Title" Grid.Row="0" Grid.Column="0"/>
+					<Entry x:Name="book_title" Placeholder="Book Title" Keyboard="Text" Grid.Row="0" Grid.Column="1"/>
+					<Label Text="ISBN No" Grid.Row="1" Grid.Column="0"/>
+					<Entry x:Name="isbn_number" Placeholder="ISBN Number" Keyboard="Numeric" Grid.Row="1" Grid.Column="1" TextChanged="OnTextChanged"/>
+					<Label Text="Author" Grid.Row="2" Grid.Column="0"/>
+					<Entry x:Name="author_name" Placeholder="Author Name" Keyboard="Text" Grid.Row="2" Grid.Column="1"/>
+					<Label Text="Category" Grid.Row="3" Grid.Column="0"/>
+					<Picker x:Name="book_category" Title="Book Category" Grid.Row="3" Grid.Column="1">
+						<Picker.Items>
+							<x:String>Fiction</x:String>
+							<x:String>Nonfiction</x:String>
+							<x:String>Drama</x:String>
+							<x:String>Self help</x:String>
+							<x:String>Action</x:String>
+							<x:String>Romance</x:String>
+							<x:String>Mystery</x:String>
+						</Picker.Items>
+					</Picker>
+					<Label Text="Description" Grid.Row="4" Grid.Column="0"/>
+					<Entry x:Name="book_description" Placeholder="Book Description" Keyboard="Text" Grid.Row="4" Grid.Column="1"/>
+				</Grid>
+				<StackLayout Orientation="Horizontal">
+					<Button Text="SAVE" Clicked="adddata" IsEnabled="false" >
+						<Button.Triggers>
+            				<MultiTrigger TargetType="Button">
+              					<MultiTrigger.Conditions>
+					                <BindingCondition Binding="{Binding Source={x:Reference book_title},
+					                                    Path=Text.Length,
+					                                    Converter={StaticResource dataHasBeenEntered}}"
+					                                  Value="true" />
+					                <BindingCondition Binding="{Binding Source={x:Reference isbn_number},
+					                                    Path=Text.Length,
+					                                    Converter={StaticResource dataHasBeenEntered}}"
+					                                  Value="true" />
+					                <BindingCondition Binding="{Binding Source={x:Reference author_name},
+					                                    Path=Text.Length,
+					                                    Converter={StaticResource dataHasBeenEntered}}"
+					                                  Value="true" />
+					                <BindingCondition Binding="{Binding Source={x:Reference book_description},
+					                                    Path=Text.Length,
+					                                    Converter={StaticResource dataHasBeenEntered}}"
+					                                  Value="true" />
+              					</MultiTrigger.Conditions>
+              					<Setter Property="IsEnabled" Value="True" />
+            				</MultiTrigger>
+          				</Button.Triggers>
+					</Button>
+					<Button Text="Cancel" Clicked="cancel" />
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</AbsoluteLayout>
+</ContentPage>

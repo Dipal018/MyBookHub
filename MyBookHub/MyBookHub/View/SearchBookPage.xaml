@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="MyBookHub.View.SearchBookPage">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="FontSize" Value="16" />
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="VerticalOptions" Value="Center" />
+			</Style>
+			<Style TargetType="Picker">
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+
+        <Image 
+				AbsoluteLayout.LayoutFlags="All" 
+				AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            	Source="background3.png" 
+				Aspect="AspectFill"/>
+
+		<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="10" >
+			<StackLayout 
+					VerticalOptions="Center" HorizontalOptions="Center"
+					Padding="20" Spacing="10" BackgroundColor="White" Opacity="0.8">
+				<Grid>
+					<Grid.ColumnDefinitions>
+		                <ColumnDefinition Width="100" />
+		                <ColumnDefinition Width="*" />
+		            </Grid.ColumnDefinitions>
+					<Label Text="Search By" Grid.Row="0" Grid.Column="0"/>
+					<Picker x:Name="searchpicker" Grid.Row="0" Grid.Column="1"
+							Title="Search By" 
+							SelectedIndexChanged="Handle_SearchBy_SelectedIndexChanged"> 
+						<Picker.Items> 
+							<x:String>Book Title</x:String> 
+							<x:String>Author Name</x:String> 
+							<x:String>Book Category</x:String> 
+						</Picker.Items> 
+					</Picker>
+					<Label x:Name = "entrylbl" Text="Enter here:" Grid.Row="1" Grid.Column="0"/>
+					<StackLayout Grid.Row="1" Grid.Column="1">
+						<Entry x:Name="searchQuery" Keyboard="Text"  HorizontalOptions="FillAndExpand" />
+				          <Picker x:Name="selectcategory" IsVisible = "false" Title="Book Category" HorizontalOptions="FillAndExpand" > 
+							<Picker.Items> 
+								<x:String>Fiction</x:String> 
+								<x:String>Nonfiction</x:String> 
+								<x:String>Drama</x:String> 
+								<x:String>Self help</x:String> 
+								<x:String>Action</x:String> 
+								<x:String>Romance</x:String> 
+								<x:String>Mystery</x:String> 
+							</Picker.Items> 
+						</Picker>
+					</StackLayout>
+					<Button Text="SEARCH" Clicked="searchdata" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+				</Grid>
+			</StackLayout>
+		</ScrollView>
+	</AbsoluteLayout>
+</ContentPage>

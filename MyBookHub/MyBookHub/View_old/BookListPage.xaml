@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyBookHub.BookListPage">
+<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ListView x:Name="BookListView" 
+			IsVisible="true"
+			ItemSelected="OnViewListItemSelected">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="10" HeightRequest="30">
+            <Grid>
+              <StackLayout >
+                <Label Text="{Binding BookTitle}" Font="20"></Label>
+              </StackLayout>
+            </Grid>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>

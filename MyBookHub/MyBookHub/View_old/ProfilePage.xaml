@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyBookHub.View.ProfilePage">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+
+  <ScrollView BackgroundColor="#FDF2E9"> 
+    
+    <Grid x:Name="mainGrid">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="50" />
+        <RowDefinition Height="25" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" /> 
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="25" />
+        <ColumnDefinition Width="Auto"  />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="25" />
+      </Grid.ColumnDefinitions>
+
+      <StackLayout  BackgroundColor="#FFE5B4" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+        <Label Text="My Profile" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#503026" FontAttributes="Bold" FontSize="Large"/>
+      </StackLayout>
+      
+      <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="2" Grid.Column="1">
+        <Label Text="First Name" TextColor="#503026" />
+      </StackLayout>
+      <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="2" Grid.Column="2">
+        <Entry x:Name="firstname" Placeholder="First Name" />
+      </StackLayout>
+
+      <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="3" Grid.Column="1">
+        <Label Text="Last Name" TextColor="#503026" />
+      </StackLayout>
+      <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="3" Grid.Column="2">
+        <Entry x:Name="lastname" Placeholder="last name"  />
+      </StackLayout>
+
+      <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="4" Grid.Column="1">
+        <Label Text="Contact Number" TextColor="#503026"/>
+      </StackLayout>
+      <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="4" Grid.Column="2">
+        <Entry x:Name="contactno" Placeholder="phone number" />
+      </StackLayout>
+
+      <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="5" Grid.Column="1">
+        <Label Text="Email Address" TextColor="#503026" />
+      </StackLayout>
+      <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="5" Grid.Column="2">
+        <Entry x:Name="emailaddress" Placeholder="Email" />
+      </StackLayout>
+
+      <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="6" Grid.Column="1">
+        <Label Text="UserName" TextColor="#503026" />
+      </StackLayout>
+      <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="6" Grid.Column="2">
+        <Entry x:Name="username" Placeholder="Username" IsEnabled="False"/>
+      </StackLayout>
+
+      <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="7" Grid.Column="1">
+        <Label Text="Password" TextColor="#503026" />
+      </StackLayout>
+      <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="7" Grid.Column="2">
+        <Entry x:Name="password" IsPassword="False"  />
+      </StackLayout>
+
+      <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="8" Grid.Column="1">
+        <Button Text="Update" Clicked="updateuser"  TextColor="#503026" />
+      </StackLayout>
+      <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="8" Grid.Column="2">
+        <Button Text="Cancel" Clicked="cancelaction"  TextColor="#503026" />
+      </StackLayout>
+    </Grid>
+  </ScrollView>
+</ContentPage>

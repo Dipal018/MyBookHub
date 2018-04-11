@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyBookHub.View.UserHomePage">
+
+  <StackLayout>
+    <StackLayout HeightRequest="50" BackgroundColor="#FFE5B4">
+      <Label Text="Home"
+        HorizontalOptions="CenterAndExpand"
+                   TextColor="#503026" FontAttributes="Bold" FontSize="Large">
+      </Label>
+    </StackLayout>
+  
+  <TableView Intent="Settings">
+    <TableRoot>
+      <TableSection Title="" >
+        
+        <ViewCell>
+          <StackLayout Orientation="Horizontal">
+            <Label Text="My Profile"
+              HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+              TextColor="#503026" >
+              <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                  Tapped="OnTapGestureProfileTapped"
+                  NumberOfTapsRequired="1" />
+              </Label.GestureRecognizers>
+            </Label>
+          </StackLayout>
+        </ViewCell>
+        <ViewCell>
+          <StackLayout Orientation="Horizontal">
+            <Label Text="My Books"
+              HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+              TextColor="#503026" >
+              <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                  Tapped="OnTapGestureMyBooksTapped"
+                  NumberOfTapsRequired="1" />
+              </Label.GestureRecognizers>
+            </Label>
+          </StackLayout>
+        </ViewCell>        
+                
+        <ViewCell>
+          <StackLayout Orientation="Horizontal">
+            <Label Text="About this App"
+              HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+              TextColor="#503026" >
+              <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                  Tapped="OnTapGestureAboutAppTapped"
+                  NumberOfTapsRequired="1" />
+              </Label.GestureRecognizers>
+            </Label>
+          </StackLayout>
+        </ViewCell>
+        <ViewCell>
+          <StackLayout Orientation="Horizontal">
+            <Label Text="LogOut"
+              HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+              TextColor="#503026" >
+              <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                  Tapped="OnTapGestureSignOutTapped"
+                  NumberOfTapsRequired="1" />
+              </Label.GestureRecognizers>
+            </Label>
+          </StackLayout>
+        </ViewCell>
+      </TableSection>
+    </TableRoot>
+  </TableView>
+  </StackLayout>
+</ContentPage>

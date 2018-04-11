@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{2621A6DC-CE9B-48E3-B7D8-BE224C15941B}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="MyBookHub/MyBookHub/App.xaml.cs" Line="8" Column="7" />
+      <File FileName="MyBookHub/MyBookHub.Droid/SQLite_Android.cs" Line="19" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MyBookHub.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.ItemProperties.MyBookHub.Droid PreferredExecutionTarget="Android.00b0749e1dbe284e" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Catchpoint exceptionName="System.ArgumentException" includeSubclasses="True" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

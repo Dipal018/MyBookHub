@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MyBookHub;assembly=MyBookHub"
+             x:Class="MyBookHub.View.LoginPage">
+ <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0"
+                Android="0, 0, 0, 0"
+                WinPhone="0, 0, 0, 0" />
+  </ContentPage.Padding>
+  <StackLayout>
+  <Grid x:Name="headerGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+    <BoxView BackgroundColor="Aqua" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5"/>
+    <Button Text="Back" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1" />
+    <Image Source="bookhub2.png" Aspect="AspectFit" BackgroundColor="Transparent" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="1"/>
+  </Grid>
+  </StackLayout>
+  
+  <Grid x:Name="mainGrid">
+    <Grid.RowDefinitions>
+       <RowDefinition Height="50"/>
+      <RowDefinition Height="150"/>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+
+
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="50"  />
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*"  />
+      <ColumnDefinition Width="50" />
+    </Grid.ColumnDefinitions>
+
+    <BoxView BackgroundColor="#FFE5B4" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"/>   
+    <Image Source="bookhub2.png" Aspect="Fill" BackgroundColor="Transparent" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+    
+    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="2" Grid.Column="1">
+      <Label Text="User Name" TextColor="#503026" />
+    </StackLayout>
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="2" Grid.Column="2">
+      <Entry x:Name="username"  />
+    </StackLayout>
+
+    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="3" Grid.Column="1">
+      <Label Text="Password" TextColor="#503026" />
+    </StackLayout>
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="3" Grid.Column="2">
+      <Entry x:Name="password"  IsPassword="True"  />
+    </StackLayout>
+
+    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" >
+      <Button Text="Login" Clicked="loginuser"  />
+    </StackLayout>
+
+    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2">
+      <Label x:Name="lblSignUp" Text="Don't have an account? SignUp" TextColor="#503026" />
+    </StackLayout>
+  </Grid>
+</ContentPage>
